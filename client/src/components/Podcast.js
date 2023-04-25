@@ -44,9 +44,9 @@
   const toggleFavorite = async () => {
         try {
           if (isFavorite) {
-            await axios.put(`http://localhost:5000/api/users/${user_id}/favorites/remove`, { podcastId: podcast._id });
+            await axios.put(`https://ripplpodcasts.live/api/users/${user_id}/favorites/remove`, { podcastId: podcast._id });
           } else {
-            await axios.put(`http://localhost:5000/api/users/${user_id}/favorites/add`, { podcastId: podcast._id });
+            await axios.put(`https://ripplpodcasts.live/api/users/${user_id}/favorites/add`, { podcastId: podcast._id });
           }
           onFavoriteChange();
         } catch (error) {
@@ -73,7 +73,7 @@
       {podcast.type === "Audio" ? (
         <audio
           ref={mediaRef}
-          src={`http://localhost:5000/api/podcasts/${podcast._id}/file`}
+          src={`https://ripplpodcasts.live/api/podcasts/${podcast._id}/file`}
           controls
           onTimeUpdate={handleTimeUpdate}
         />
@@ -82,7 +82,7 @@
           animate={{ scale: Active ? 1.5 : 1 }}
           onClick={handleClick}
           ref={mediaRef}
-          src={`http://localhost:5000/api/podcasts/${podcast._id}/file`}
+          src={`https://ripplpodcasts.live/api/podcasts/${podcast._id}/file`}
           controls
           onTimeUpdate={handleTimeUpdate}
         />

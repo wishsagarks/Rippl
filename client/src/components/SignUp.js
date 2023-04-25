@@ -10,7 +10,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", { email, password });
+      await axios.post("https://ripplpodcasts.live/api/auth/signup", { email, password });
       // Redirect to login page after successful signup
       window.location.href = "/login";
     } catch (err) {

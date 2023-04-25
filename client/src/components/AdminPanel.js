@@ -33,7 +33,7 @@ const AdminPanel = () => {
     data.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/podcasts", data)
+      await axios.post("https://ripplpodcasts.live/api/podcasts", data)
       alert("Podcast added successfully");
     } catch (error) {
       console.error("Error adding podcast:", error);

@@ -9,7 +9,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/admin/signup", {
+      await axios.post("https://ripplpodcasts.live/api/admin/signup", {
         email,
         password,
       });

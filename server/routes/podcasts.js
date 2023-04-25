@@ -25,14 +25,18 @@ router.get("/", async (req, res) => {
 
 router.post("/", upload.single("file"), async (req, res) => {
   console.log(req.file);
+
+  // Determine the type based on the mimetype of the uploaded file
+  const fileType = req.file.mimetype.startsWith("audio") ? "Audio" : "Video";
+
   try {
     const newPodcast = new Podcast({
       name: req.body.name,
       description: req.body.description,
       category: req.body.category,
-      type: req.body.type,
+      type: fileType, // Use fileType instead of req.body.type
       speaker: req.body.speaker,
-      fileName: req.file.filename, 
+      fileName: req.file.filename,
     });
 
     const savedPodcast = await newPodcast.save();
@@ -77,6 +81,5 @@ router.get("/:id/file", async (req, res) => {
     res.status(500).json({ message: "Error fetching podcast file", error });
   }
 });
-
 
 module.exports = router;

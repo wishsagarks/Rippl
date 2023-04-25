@@ -25,7 +25,7 @@ const Login = () => {
       e.preventDefault();
       try {
         console.log(email,password)
-        const response = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+        const response = await axios.post("https://ripplpodcasts.live/api/auth/login", { email, password });
         console.log(response)
         sessionStorage.setItem("token", response.data.token);
         window.location.href = "/dashboard";

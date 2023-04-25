@@ -68,7 +68,7 @@ const Dashboard = () => {
   ];
   const fetchPopularPodcasts = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/podcasts/popular"
+      "https://ripplpodcasts.live/api/podcasts/popular"
     );
     setPodcasts(response.data);
   };
@@ -94,13 +94,13 @@ const Dashboard = () => {
     }
 
     const response = await axios.get(
-      `http://localhost:5000/api/podcasts/search?query=${searchQuery}`
+      `https://ripplpodcasts.live/api/podcasts/search?query=${searchQuery}`
     );
     setPodcasts(response.data);
   };
   const handleSearch = async (e) => {
     e.preventDefault();
-    const response = await axios.get(`http://localhost:5000/api/podcasts/search?term=${searchQuery}`);
+    const response = await axios.get(`https://ripplpodcasts.live/api/podcasts/search?term=${searchQuery}`);
     setPodcasts(response.data);
   };
   return (
