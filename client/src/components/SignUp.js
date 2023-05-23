@@ -11,8 +11,8 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await axios.post("https://ripplpodcasts.live/api/auth/signup", { email, password });
-      // Redirect to login page after successful signup
-      window.location.href = "/login";
+
+      window.location.href = "/userlogin";
     } catch (err) {
       setError("Error signing up. Please try again.");
       console.log(error)
